@@ -1,0 +1,36 @@
+<div>
+  <form [formGroup]='signupForm' (ngSubmit)="signUp(
+    signupForm.controls['user'].value,
+    signupForm.controls['psw'].value,
+    signupForm.controls['pswAga'].value,
+    signupForm.controls['employeeId'].value
+    )" class="ui form">
+    <div class="field">
+      <label for="userInput">User Name:</label>
+      <input type="text" id="userInput" placeholder="user  name" [formControl]="signupForm.controls['user']" >
+      <div *ngIf="signupForm.controls['user'].hasError('required') 
+                && signupForm.controls['user'].touched">
+        <span class="red">User name is required.</span>
+      </div>
+      <label for="pswInput">Password:</label>
+      <input type="password" id="pswInput" placeholder="no  less  than  3  chars" [formControl]="signupForm.controls['psw']" >
+      <div *ngIf="signupForm.controls['psw'].hasError('required') 
+                && signupForm.controls['psw'].touched">
+        <span class="red">User password is required.</span>
+      </div>
+      <label for="pswAgaInput">Password Again:</label>
+      <input type="password" id="pswAgaInput" placeholder="input  password  again" [formControl]="signupForm.controls['pswAga']" >
+        <div *ngIf="signupForm.controls['pswAga'].hasError('required') 
+                && signupForm.controls['pswAga'].touched">
+          <span class="red">User password has to be chaecked.</span>
+        </div>
+      <label for="employeeIdInput">Employee ID:</label>
+      <input type="text" id="employeeIdInput" placeholder="your  employee  id" [formControl]="signupForm.controls['employeeId']" >
+        <div *ngIf="signupForm.controls['employeeId'].hasError('required') 
+              && signupForm.controls['employeeId'].touched">
+          <span class="red">User employeeId is required.</span>
+        </div>
+    </div>
+    <button type="submit" class="ui primary button">Sign Up</button>
+  </form>
+</div>

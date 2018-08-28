@@ -1,0 +1,22 @@
+<form class="ui large form segment">
+  <h3 class="ui header">Add An Article</h3>
+
+  <div class="field">
+    <label for="title">Title:</label>
+    <input name="title" #newtitle>
+  </div>
+  <div class="field">
+      <label for="link">Link:</label>
+      <input name="link" #newlink>
+  </div>
+  <!--点击添加Article-->
+  <button (click)="addArticle(newtitle,newlink)" class="ui primary button">Submit Link</button>
+</form>
+
+<div class="ui grid posts">
+  <!--对文章数组中的每篇文章，输入输出绑定，下级组件显示-->
+  <app-article-show
+    *ngFor="let article of sortedArticles()"
+    [article]="article">
+  </app-article-show>
+</div>

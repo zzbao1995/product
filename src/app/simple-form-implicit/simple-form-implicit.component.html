@@ -1,0 +1,17 @@
+<div class="ui raised segment">
+  <h2 class="ui header">Put Update</h2>
+  <form [formGroup]="myForm"
+        (ngSubmit)="updateTel(myForm.controls['tel'].value)"
+        class="ui form">
+
+    <div class="field">
+      <label for="telInput">Telephone</label>
+      <input type="tel" id="telInput" placeholder="Required" [formControl]="myForm.controls['tel']">
+      <div *ngIf="myForm.controls['tel'].hasError('required') && myForm.controls['tel'].touched">
+          <span class="red">Tel is required</span>
+        </div>
+    </div>
+
+    <button type="submit" class="ui primary button">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<div>
+  <!--如果没有用户登录，则显示登录表单-->
+  <div *ngIf="!userService.isLoggedIn()">
+  <form [formGroup]='loginForm' (ngSubmit)="logIn(loginForm.controls['user'].value, loginForm.controls['psw'].value)" class="ui form">
+    <div class="field">
+      <label for="userInput">User Name:</label>
+      <input type="text" id="userInput" placeholder="user name" [formControl]="loginForm.controls['user']">
+    </div>
+    <div class="field">
+      <label for="pswInput">Password:</label>
+      <input type="password" id="pswInput" placeholder="" [formControl]="loginForm.controls['psw']">
+    </div>
+    <button type="submit" class="ui primary button">Log In</button>
+  </form>
+  </div>
+  <!--如果用户登录成功，则显示登录信息和退出按钮-->
+  <div class="well" *ngIf="userService.isLoggedIn()">
+    <p>LogIn User:&nbsp;<b>{{ userService.getLogUser() }}</b></p>
+    <!--退出按钮，即清除H5页面键值对信息，无登录信息-->
+    <a href (click)="userService.logOut()">Log Out</a>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+<div class="ui raised segment">
+    <h2 class="ui header">Patch Update</h2>
+  <form [formGroup]="myForm" (ngSubmit)="updateEmail(myForm.controls['email'].value)" class="ui form">
+
+    <div class="field">
+      <label for="emailInput">Email</label>
+      <input type="email" id="emailInput" placeholder="Required" [formControl]="myForm.controls['email']">
+      <div *ngIf="myForm.controls['email'].hasError('required') && myForm.controls['email'].touched">
+        <span class="red">Email is required</span>
+      </div>
+      <div *ngIf="myForm.controls['email'].hasError('invalidEmail') 
+                  && myForm.controls['email'].touched
+                  && myForm.controls['email'].value != ''">
+        <span class="red">Email must contains '@', check again please.</span>
+      </div>
+    </div>
+
+    <div *ngIf="myForm.valid" class="ui right message">Form is valid.
+      <br/>Please Check:
+      <span class="emphasize">{{ myForm.controls['email'].value }}</span>
+    </div>
+    <button type="submit" class="ui primary button">Submit</button>
+  </form>
+</div>

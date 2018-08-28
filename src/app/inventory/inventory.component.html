@@ -1,0 +1,10 @@
+<div class="ui large form segment">
+  <div class="ui items">
+    <app-inventory-row
+      *ngFor="let myproduct of products"
+      [product]="myproduct"
+      (click)="clicked(myproduct)"
+      [class.selected]="isSelected(myproduct)">
+    </app-inventory-row>
+  </div>
+</div>

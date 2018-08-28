@@ -1,0 +1,93 @@
+@import "semantic.min.css";
+
+body{
+  /*background-image: url("./assets/drop.jpg");*/
+  background-position: 88% 88%;
+  padding: 50px;
+}
+
+/* forms css styles */
+
+.ui.menu .item img.logo {
+    margin-right: 1.5em;
+}
+
+/* by default, semantic UI hides these unless the whole form is in the same
+state. we don't want to impose that requirement */
+.ui.form .error.message,
+.ui.form .success.message,
+.ui.form .warning.message {
+  display: block;
+}
+
+.segment {
+  margin: 1em 0;
+}
+
+.ui.segment:last-child {
+    margin-bottom: 1em;
+}
+.ui.segment:first-child {
+    margin-top: 1em;
+}
+
+.dotted {
+  border: 2px dotted green;
+  background-color: yellow;
+}
+
+.ui.menu .item img.logo {
+  margin-right: 1.5em;
+}
+
+form.ui.segment.form {
+background-color: #F1F9FF;
+margin-top: 2em;
+}
+
+form.form:after {
+content: '';
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+.votes {
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #E6E6E6;
+padding: 1em 0;
+border-radius: 5px;
+}
+
+.ui.grid.posts {
+margin-top: 2em;
+}
+
+.meta {
+color: #9A9A9A
+}
+
+.ui.grid>.row>.column.votes {
+display: flex;
+}
+
+ul.ui.list li:before {
+content: '';
+}
+
+.voters {
+clear: both;
+width: 100%;
+}
+
+span.emphasize{
+  color: rgba(0, 47, 255, 0.966);
+  font-size: 15px;
+  font-weight: 200;
+}
+span.red{
+  color:red;
+}

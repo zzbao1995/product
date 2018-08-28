@@ -1,0 +1,21 @@
+<h2 class="ui header">User Information</h2>
+<button type="button" class="ui primary button" (click)="makeRequest()">
+  Get</button>
+<div *ngIf="loadingOK">
+  <table class="ui celled table" style="margin-top:10px">
+    <thead>
+      <th>Name</th>
+      <th>Password</th>
+      <th>Employee ID</th>
+      <th>Telephone Number</th>
+      <th>Email Adress</th>
+    </thead>
+    <tr *ngFor="let user of UserInfoes">
+      <td>{{ user.userName }}</td>
+      <td>{{ user.userPsw }}</td>
+      <td>{{ user.userId }}</td>
+      <td>{{ user.userTel }}</td>
+      <td>{{ user.userEmail }}</td>
+    </tr>
+  </table>
+</div>
