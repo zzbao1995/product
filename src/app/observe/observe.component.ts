@@ -16,7 +16,6 @@ export class ObserveComponent implements OnInit {
     this.route.url.subscribe(
       url => console.log('The URL:', url)
     );
-    // tslint:disable-next-line:prefer-const
     let observable = Observable.create(function subscribe(observer) {
       let id = setInterval(() => {
         observer.next('hi');
