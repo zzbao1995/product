@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Response, RequestOptions, Headers} from '@angular/http';
-
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
-import { UserInfo } from '../userInfo.model';
+import { UserInfo } from '../../service/user.service';
 
 @Component({
   selector: 'app-simple-http',
@@ -16,7 +12,9 @@ export class SimpleHttpComponent implements OnInit {
   UserInfoes: UserInfo[];
   apiUrl = 'http://localhost:63294/api/UserInfoes/';
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {
+    this.makeRequest();
+   }
 
   // get请求，，返回所有的UserInfo实体对象
   makeRequest(): void {

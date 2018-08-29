@@ -6,21 +6,20 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { ArticleComponent } from './article/article.component';
-import { InventoryComponent } from './inventory/inventory.component';
-import { SimpleFormComponent, childRoutes } from './simple-form/simple-form.component';
-import { SimpleHttpComponent } from './simple-http/simple-http.component';
-import { ArticleShowComponent } from './article-show/article-show.component';
-import { InventoryRowComponent } from './inventory-row/inventory-row.component';
-import { SimpleFormImplicitComponent } from './simple-form-implicit/simple-form-implicit.component';
-import { SimpleFormBuilderComponent } from './simple-form-builder/simple-form-builder.component';
-import { UserService } from './userService.model';
+import { LoginComponent } from './http-dept/login/login.component';
+import { SignUpComponent } from './http-dept/sign-up/sign-up.component';
+import { ArticleComponent } from './article-dept/article/article.component';
+import { InventoryComponent } from './inventory-dept/inventory/inventory.component';
+import { SimpleFormComponent, childRoutes } from './form-dept/simple-form/simple-form.component';
+import { SimpleHttpComponent } from './http-dept/simple-http/simple-http.component';
+import { ArticleShowComponent } from './article-dept/article-show/article-show.component';
+import { InventoryRowComponent } from './inventory-dept/inventory-row/inventory-row.component';
+import { SimpleFormImplicitComponent } from './form-dept/simple-form-implicit/simple-form-implicit.component';
+import { SimpleFormBuilderComponent } from './form-dept/simple-form-builder/simple-form-builder.component';
+import { UserService } from './service/user.service';
 import { LoggedInGuard } from '../guards/loggedIn.guard';
 import { NotLoggedInGuard } from '../guards/notLoggedIn.guard';
-import { UserInfo } from './userInfo.model';
-import { ObserveComponent } from './observe/observe.component';
+import { UserInfo } from './service/user.service';
 
 // 定义一级路由
 const routes: Routes = [
@@ -31,7 +30,6 @@ const routes: Routes = [
   {path: 'inventory', component: InventoryComponent,  canActivate: [LoggedInGuard]},
   {path: 'simpleForm', component: SimpleFormComponent,  canActivate: [LoggedInGuard], children: childRoutes},
   {path: 'simpleHttp', component: SimpleHttpComponent,  canActivate: [LoggedInGuard]},
-  {path: 'observable', component: ObserveComponent,  canActivate: [LoggedInGuard]},
 ];
 
 @NgModule({
@@ -46,8 +44,7 @@ const routes: Routes = [
     ArticleShowComponent,
     InventoryRowComponent,
     SimpleFormImplicitComponent,
-    SimpleFormBuilderComponent,
-    ObserveComponent
+    SimpleFormBuilderComponent
   ],
   imports: [
     HttpClientModule,

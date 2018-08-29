@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserService } from '../userService.model';
-import { UserInfo } from '../userInfo.model';
+import { UserService } from '../../service/user.service';
+import { UserInfo } from '../../service/user.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

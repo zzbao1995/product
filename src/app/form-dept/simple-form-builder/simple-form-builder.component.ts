@@ -1,6 +1,6 @@
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../userService.model';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-simple-form-builder',

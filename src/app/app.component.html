@@ -4,13 +4,12 @@
     Angular学习内容</h1>
 </div>
 <div class="ui seven item menu">
-      <a class="item" [routerLink]="['login']">登录</a>
-      <a class="item" [routerLink]="['signUp']">注册</a>
-      <a class="item" [routerLink]="['article']">示例：文章</a>
-      <a class="item" [routerLink]="['inventory']">示例：商品</a>
-      <a class="item" [routerLink]="['simpleForm']">表单</a>
-      <a class="item" [routerLink]="['simpleHttp']">请求</a>
-      <a class="item" [routerLink]="['observable']">观察者</a>
+  <li class="item"><a [routerLink]="['login']" routerLinkActive="active">登录</a></li>
+  <li class="item"><a [routerLink]="['signUp']" routerLinkActive="active">注册</a></li>
+  <li class="item"><a [routerLink]="['article']" routerLinkActive="active">示例：文章</a></li>
+  <li class="item"><a [routerLink]="['inventory']" routerLinkActive="active">示例：商品</a></li>
+  <li class="item"><a [routerLink]="['simpleForm']" routerLinkActive="active">表单</a></li>
+  <li class="item"><a [routerLink]="['simpleHttp']" routerLinkActive="active">请求</a></li>
 </div>
 <div class="left">
   <router-outlet></router-outlet>

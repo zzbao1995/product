@@ -3,7 +3,9 @@
 body{
   /*background-image: url("./assets/drop.jpg");*/
   background-position: 88% 88%;
-  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 30px;
 }
 
 /* forms css styles */
